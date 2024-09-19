@@ -10,6 +10,6 @@ git init
 git add -A
 git commit -m 'deploy'
 # 部署到 https://github.com/richiea1y/vite_vanilla.git 分支為 gh-pages
-git push -f https://github.com/richiea1y/vite_vanilla.git main:gh-pages
+git push -f https://github.com/fortes1219/richard_vite_vanilla.git master:gh-pages
 # 將dist資料夾中的內容推送至遠端的gh-pages分支中，並強制將舊有的內容取代成目前的內容（指令 git push -f)
 cd -

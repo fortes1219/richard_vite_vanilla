@@ -84,122 +84,25 @@
   @include base.useContainer(1200px, 1rem);
 }
 
-.dice {
-  @for $i from 1 through 6 {
-    &-#{$i} {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      border-radius: 6px;
-      background-color: #333;
-      i {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: #F00;
-      }
-    }
-
-    @if $i == 2 {
-      &-#{$i} {
-        i:nth-child(1) {
-          top: 25%;
-          left: 25%;
-        }
-        i:nth-child(2) {
-          top: 75%;
-          left: 75%;
-        }
-      }
-      
-    } @else if $i == 3 {
-      &-#{$i} {
-        i:nth-child(1) {
-          top: 25%;
-          left: 25%;
-        }
-        i:nth-child(2) {
-          top: 50%;
-          left: 50%;
-        }
-        i:nth-child(3) {
-          top: 75%;
-          left: 75%;
-        }
-      }
-      
-    } @else if $i == 4 {
-      &-#{$i} {
-        i:nth-child(1) {
-          top: 25%;
-          left: 25%;
-        }
-        i:nth-child(2) {
-          top: 25%;
-          left: 75%;
-        }
-        i:nth-child(3) {
-          top: 75%;
-          left: 25%;
-        }
-        i:nth-child(4) {
-          top: 75%;
-          left: 75%;
-        }
-      }      
-    } @else if $i == 5 {
-      &-#{$i} {
-        i:nth-child(1) {
-          top: 25%;
-          left: 25%;
-        }
-        i:nth-child(2) {
-          top: 25%;
-          left: 75%;
-        }
-        i:nth-child(3) {
-          top: 50%;
-          left: 50%;
-        }
-        i:nth-child(4) {
-          top: 75%;
-          left: 25%;
-        }
-        i:nth-child(5) {
-          top: 75%;
-          left: 75%;
-        }
-      }
-      
-    } @else if $i == 6 {
-      &-#{$i} {
-        i:nth-child(1) {
-          top: 25%;
-          left: 25%;
-        }
-        i:nth-child(2) {
-          top: 25%;
-          left: 75%;
-        }
-        i:nth-child(3) {
-          top: 50%;
-          left: 25%;
-        }
-        i:nth-child(4) {
-          top: 50%;
-          left: 75%;
-        }
-        i:nth-child(5) {
-          top: 75%;
-          left: 25%;
-        }
-        i:nth-child(6) {
-          top: 75%;
-          left: 75%;
+@for $i from 1 through 6 {
+  .dice-#{$i} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    background-color: #333;
+    
+    i {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: red;
+      transform: translate(-50%, -50%);
+      @for $j from 1 through $i {
+        &:nth-child(#{$j}) {
+          // @include base.useDiceDotPosition(2, 1);
+          @include base.useDiceDotPosition($i, $j);
         }
       }
     }
