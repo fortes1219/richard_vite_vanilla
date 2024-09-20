@@ -26,6 +26,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         topic: resolve(__dirname, "topic.html"),
         products: resolve(__dirname, "products.html"),
+        jsDay1: resolve(__dirname, "js-day-1.html"),
       },
       output: {
         /* 
