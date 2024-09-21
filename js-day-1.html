@@ -10,7 +10,39 @@
 
 <body>
   <div id="app">
+    <h2>Click Event</h2>
+    <div>
+      <input type="text" id="nameInput" placeholder="Enter your name">
+      <button id="submitBtn">Submit</button>
+      <p id="textMsg"></p>
+    </div>
+    <br><br>
+    <div>
+      <h2>Input Event</h2>
+      <label for="inputUserName">Username:</label>
+      <input type="text" id="inputUserName" >
+      <p id="changeOutput">Your username is: </p>
+    </div>
+    <br><br>
+    <div>
+      <h2>Change Event</h2>
+      <label for="language">Language:</label>
+      <select id="language">
+      <option value="JavaScript">JavaScript</option>
+      <option value="Python">Python</option>
+      <option value="C++">C++</option>
+      </select>
+      <p id="selectedLang">Selected language: </p>
+    </div>
+    <br><br>
 
+    <div>
+      <h2>Keydown/Keyup Event</h2>
+      <label for="keyInput">Press any key:</label>
+      <input type="text" id="keyInput" >
+      <p id="keyPressed">Key pressed: </p>
+    </div>
+    <br><br>
   </div>
 </body>
 <script type="module" src="/main.js"></script>
