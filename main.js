@@ -1,5 +1,6 @@
 import 'styles/style.scss';
 import '@/js/nav.js';
+import '@/js/work-1.js';
 
 /** Click */
 const nameInput = document.getElementById('nameInput');

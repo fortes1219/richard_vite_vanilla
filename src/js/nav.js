@@ -50,9 +50,6 @@ appContent.insertAdjacentHTML('afterbegin',`
       <li>
         <a href="js-day-1.html">Day-1: 資料型別與型別轉換</a>
       </li>
-      <li>
-        <a href="javascript: void()">Day Extra: 偵聽器與DOM操作</a>
-      </li>
     </ul>
   </div>
 `);
