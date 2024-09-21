@@ -13,31 +13,30 @@ submitBtn.addEventListener('click', () => {
 });
 
 /** Input */
-const inputUsername = document.getElementById("inputUserName");
-const changeOutput = document.getElementById("changeOutput");
+const inputUsername = document.getElementById('inputUserName');
+const changeOutput = document.getElementById('changeOutput');
 // 監聽 input 事件，實時更新結果
-inputUsername.addEventListener("input", (event) => {
-const value = event.target.value;
-changeOutput.textContent = `Your username is: ${value}`;
+inputUsername.addEventListener('input', (event) => {
+  const value = event.target.value;
+  changeOutput.textContent = `Your username is: ${value}`;
 });
 
 /** Change */
 
-const lang = document.getElementById("language");
-const selectedLang = document.getElementById("selectedLang");
+const lang = document.getElementById('language');
+const selectedLang = document.getElementById('selectedLang');
 
 // 監聽 change 事件，當選擇語言變更時更新顯示
-lang.addEventListener("change", (event) => {
+lang.addEventListener('change', (event) => {
   const selectedOption = event.target.value;
-  console.log(event);
   selectedLang.textContent = `Selected language: ${selectedOption}`;
 });
 
 /** Keydown / Keyup */
 
-const keyInput = document.getElementById("keyInput");
-const keyPressedOutput = document.getElementById("keyPressed");
-  // 監聽 keydown 事件，實時顯示按下的鍵
-  keyInput.addEventListener("keydown", (event) => {
+const keyInput = document.getElementById('keyInput');
+const keyPressedOutput = document.getElementById('keyPressed');
+// 監聽 keydown 事件，實時顯示按下的鍵
+keyInput.addEventListener('keydown', (event) => {
   keyPressedOutput.textContent = `Key pressed: ${event.key}`;
 });
