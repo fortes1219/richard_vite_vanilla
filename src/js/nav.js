@@ -4,6 +4,7 @@ const pageTitleStrategy = {
   'topic.html': () => 'RWD: Topics',
   'products.html': () => 'RWD: Products',
   'js-day-1.html': () => 'Javascript DAY-1: 資料型別與型別轉換',
+  'js-day-2.html': () => 'Javascript DAY-2: 變數、作用域、運算子與物件',
   'default': () => 'Welcome to Our Website',  // 預設標題
 };
 
@@ -49,6 +50,9 @@ appContent.insertAdjacentHTML('afterbegin',`
     <ul class="nav-list">
       <li>
         <a href="js-day-1.html">Day-1: 資料型別與型別轉換</a>
+      </li>
+      <li>
+        <a href="js-day-2.html">Day-2: 變數、作用域、運算子與物件</a>
       </li>
     </ul>
   </div>
