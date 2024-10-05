@@ -54,6 +54,9 @@ appContent.insertAdjacentHTML('afterbegin',`
       <li>
         <a href="js-day-2.html">Day-2: 變數、作用域、運算子與物件</a>
       </li>
+      <li>
+        <a href="js-day-3.html">Day-3: 迴圈與陣列(一)</a>
+      </li>
     </ul>
   </div>
 `);

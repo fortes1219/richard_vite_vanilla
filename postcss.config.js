@@ -8,8 +8,8 @@ import autoprefixer from 'autoprefixer';
 export default {
   plugins: [
     postcssImport,
-    tailwindcss({ nesting: postcssNesting }),
     tailwindcss,
+    postcssNesting,
     autoprefixer,
   ],
-}
+};
