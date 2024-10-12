@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS-DAY-3: 迪傑斯特拉演算法應用</title>
+</head>
+<style>
+  .spot-button {
+      margin: 5px;
+      padding: 10px;
+  }
+  .selected {
+      background-color: #4CAF50;
+      color: white;
+  }
+</style>
+<div id="app">
+  <h1>最佳旅遊路線規劃器</h1>
+
+  <div id="description">
+    <h2>題目描述：</h2>
+    <p>實現一個函數 <code>findBestTravelRoute</code>，該函數能夠根據給定的旅遊景點數據，找出從起點到終點的最佳路線。函數需要考慮交通時間、平均消費和景點評分，並根據成本權重和評分權重來平衡這些因素。
+    </p>
+    <p>函數簽名：</p>
+    <pre><code>function findBestTravelRoute(spots, start, end, costWeight = 0.7, ratingWeight = 0.3)</code></pre>
+    <p>注意：</p>
+    <ul>
+      <li>使用 Decimal.js 來處理計算，以避免浮點數精度問題。</li>
+      <li>請先安裝 <code>npm install decimal.js</code></li>
+      <li>權重參數（costWeight 和 ratingWeight）代表了旅行者的心理預期，對結果有重要影響。</li>
+    </ul>
+  </div>
+
+  <div id="spots-container">
+    <h2>選擇起點和終點：</h2>
+    <!-- 景點按鈕將在這裡動態生成 -->
+</div>
+
+<button id="calculate-route" disabled>計算最佳路線</button>
+
+<div id="output">
+    <h2>輸出結果：</h2>
+    <div id="result"></div>
+</div>
+</div>
+
+<script type="module" src="/main.js"></script>
+<script type="module" src="src/js/work-3-dijikstra.js"></script>
+
+</html>

@@ -58,6 +58,9 @@ appContent.insertAdjacentHTML('afterbegin',`
         <a href="js-day-3.html">Day-3: 迴圈與陣列(一)</a>
       </li>
       <li>
+        <a href="js-day-3-dijikstra.html">Day-3: 迪傑斯特拉演算法</a>
+      </li>
+      <li>
         <a href="js-day-4.html">Day-4: 陣列(二)、閉包、遞迴</a>
       </li>
     </ul>
