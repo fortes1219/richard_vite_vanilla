@@ -11,10 +11,32 @@
   .spot-button {
       margin: 5px;
       padding: 10px;
+      background-color: #666;
+      border-radius: 6px;
   }
   .selected {
       background-color: #4CAF50;
       color: white;
+  }
+  .calc-button:disabled {
+      background-color: #ccc;
+      color: #666;
+  }
+  .calc-button {
+      margin: 10px;
+      padding: 10px;
+      background-color: #696eff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+  }
+  .clear-button {
+      margin: 10px;
+      padding: 10px;
+      background-color: #ff6969;
+      color: white;
+      border: none;
+      border-radius: 6px;
   }
 </style>
 <div id="app">
@@ -39,7 +61,8 @@
     <!-- 景點按鈕將在這裡動態生成 -->
 </div>
 
-<button id="calculate-route" disabled>計算最佳路線</button>
+<button id="calculate-route" class="calc-button" disabled>計算最佳路線</button>
+<button id="clear-selection" class="clear-button">清除選擇</button>
 
 <div id="output">
     <h2>輸出結果：</h2>

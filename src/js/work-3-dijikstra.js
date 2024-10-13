@@ -57,7 +57,21 @@ function selectSpot(button, spot) {
       button.classList.add('selected');
   }
 
+  updateButtonStates();
+}
+
+function updateButtonStates() {
   document.getElementById('calculate-route').disabled = selectedSpots.length !== 2;
+  document.getElementById('clear-selection').disabled = selectedSpots.length === 0;
+}
+
+function clearSelection() {
+  selectedSpots = [];
+  document.querySelectorAll('.spot-button').forEach(button => {
+      button.classList.remove('selected');
+  });
+  document.getElementById('result').innerHTML = '';
+  updateButtonStates();
 }
 
 // TODO: 實現 findBestTravelRoute 函數
@@ -159,4 +173,6 @@ function displayResult(result) {
 document.addEventListener('DOMContentLoaded', () => {
   generateSpotButtons();
   document.getElementById('calculate-route').addEventListener('click', calculateAndDisplayRoute);
+  document.getElementById('clear-selection').addEventListener('click', clearSelection);
+  updateButtonStates();
 });
