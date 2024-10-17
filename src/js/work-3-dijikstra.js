@@ -75,7 +75,7 @@ function clearSelection() {
 }
 
 // TODO: 實現 findBestTravelRoute 函數
-function findBestTravelRoute(spots, start, end, costWeight = 0.7, ratingWeight = 0.3) {
+function findBestTravelRoute(spots, start, end, costWeight = 0.5, ratingWeight = 0.5) {
   console.log(`開始尋找從 ${start} 到 ${end} 的最佳路線`);
   console.log(`成本權重: ${costWeight}, 評分權重: ${ratingWeight}`);
 
@@ -115,8 +115,8 @@ function findBestTravelRoute(spots, start, end, costWeight = 0.7, ratingWeight =
 
     console.log(`當前處理的景點: ${currentSpot}, 當前成本: ${lowestCost}`);
 
-    if (currentSpot === null || currentSpot === end) break;
-
+    if (currentSpot === null || currentSpot === end) break; // break的意思是找到了最短路徑或者沒有路徑
+    // 產生景點的所有鄰接點且不重複
     processed.add(currentSpot);
 
     for (let neighbor in spots[currentSpot].connections) {
