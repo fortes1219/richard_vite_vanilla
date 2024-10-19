@@ -36,8 +36,8 @@ const createCounter = () => {
   };
 };
 const counter = createCounter();
-console.log(counter()); // 1
-console.log(counter()); // 2
+// console.log(counter()); // 1
+// console.log(counter()); // 2
 
 // 效能開銷會非常大的例子
 
@@ -81,13 +81,128 @@ function createLazyClosure() {
 }
 
 // 性能測試
-console.time('Generator');
-for (let i = 0; i < 1000000; i += 100000) {
-  getData(i);
+// console.time('Generator');
+// for (let i = 0; i < 1000000; i += 100000) {
+//   getData(i);
+// }
+// console.timeEnd('Generator');
+// console.time('Lazy Initialization');
+// for (let i = 0; i < 1000000; i += 100000) {
+//   getLazyData(i);
+// }
+// console.timeEnd('Lazy Initialization');
+
+/** 二元樹 */
+const tree = {
+  value: 1,
+  left: {
+    value: 2,
+    left: { value: 4 },
+    right: { value: 5 },
+  },
+  right: {
+    value: 3,
+    left: { value: 6 },
+  },
+};
+
+// 使用遞迴
+function dfsRecursive(node, target, counter = { count: 0 }) {
+  // 如果節點不存在或者為空，返回null
+  if (!node || node === null) {
+    return null;
+  }
+  counter.count++;
+  console.log('訪問節點：', node.value);
+  // 如果找到目標值，返回當前節點
+  if (node.value === target) {
+    return node;
+  }
+  // 以左節點為始，使用遞迴搜索目標值
+  const leftResult = dfsRecursive(node.left, target, counter);
+  // 如果左節點找到目標值，直接返回
+  if (leftResult !== null) {
+    return leftResult;
+  }
+  // 以右節點為始，使用遞迴搜索目標值
+  // 右節點放最後的原因是，如果左節點找到目標值，右節點就不需要再搜索了
+  // 左邊沒找到目標，才會繼續往右邊找
+  return dfsRecursive(node.right, target, counter);
 }
-console.timeEnd('Generator');
-console.time('Lazy Initialization');
-for (let i = 0; i < 1000000; i += 100000) {
-  getLazyData(i);
+
+// 使用迭代
+function dfsIterative(node, target, counter = { count: 0 }) {
+  if (!node || node === null) {
+    return null;
+  }
+  const stack = [node];
+  while (stack.length > 0) {
+    const temp = stack.pop();
+    counter.count++;
+    console.log('訪問節點：', temp.value);
+    if (temp.value === target) {
+      return temp;
+    }
+    // 注意：先將右子節點壓入堆疊，以保持與遞迴版本相同的訪問順序
+    if (temp.right) {
+      stack.push(temp.right);
+    }
+    if (temp.left) {
+      stack.push(temp.left);
+    }
+  }
+  return null;
 }
-console.timeEnd('Lazy Initialization');
+
+// 動態創建大規模且有深度的樹狀資料結構
+function createLargeTree(depth) {
+  if (depth === 0) {
+    return null;
+  }
+  return {
+    value: Math.floor(Math.random() * 1000),
+    left: createLargeTree(depth - 1),
+    right: createLargeTree(depth - 1),
+  };
+}
+
+// 定義一個深度為15的二元樹
+const largeTree = createLargeTree(15);
+
+// 計算樹的總節點數量
+function countTotalNodes(tree) {
+  if (tree === null) {
+    return 0;
+  }
+  return 1 + countTotalNodes(tree.left) + countTotalNodes(tree.right);
+}
+
+console.log('### 節點總數量: ', countTotalNodes(largeTree));
+
+// 創建性能比較用途的函數
+function comparePerformance(treeDepth, target) {
+  const largeTree = createLargeTree(treeDepth);
+  const totalNodes = countTotalNodes(largeTree);
+  console.log(`\n比較 DFS 在深度為 ${treeDepth} 的樹搜尋 ${target} ：`);
+  console.log(`總節點數：${totalNodes}`);
+  const recursiveCounter = { count: 0 };
+  const start1 = performance.now();
+  const result1 = dfsRecursive(largeTree, target, recursiveCounter);
+  const end1 = performance.now();
+  console.log(`
+  遞迴 DFS：${result1 ? '找到' : '未找到'}目標。
+  共訪問 ${recursiveCounter.count} 個節點。
+  耗費 ${(end1 - start1).toFixed(2)} 毫秒
+  `);
+  const iterativeCounter = { count: 0 };
+  const start2 = performance.now();
+  const result2 = dfsIterative(largeTree, target, iterativeCounter);
+  const end2 = performance.now();
+  console.log(`
+  迭代 DFS：${result2 ? '找到' : '未找到'}目標。
+  共訪問 ${iterativeCounter.count} 個節點。
+  耗費 ${(end2 - start2).toFixed(2)} 毫秒
+  `);
+}
+
+//// comparePerformance(15, 999); // 深度為15的樹，搜尋value = 999
