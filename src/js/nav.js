@@ -63,6 +63,9 @@ appContent.insertAdjacentHTML('afterbegin',`
       <li>
         <a href="js-day-4.html">Day-4: 陣列(二)、閉包、遞迴</a>
       </li>
+      <li>
+        <a href="js-day-5.html">Day-5: 原型鍊與類別(class)</a>
+      </li>
     </ul>
   </div>
 `);

@@ -32,6 +32,7 @@ export default defineConfig({
         jsDay3Work: resolve(__dirname, "js-day-3-dijikstra.html"),
         jsDay4: resolve(__dirname, "js-day-4.html"),
         jsDay4Work: resolve(__dirname, "js-day-4-work.html"),
+        jsDay5: resolve(__dirname, "js-day-5.html"),
       },
       output: {
         /* 
