@@ -67,7 +67,7 @@ appContent.insertAdjacentHTML('afterbegin',`
         <a href="js-day-5.html">Day-5: 原型鍊與類別(class)</a>
       </li>
       <li>
-        <a href="js-day-6.html">Day-6: 異步處理 & Event Loop</a>
+        <a href="js-day-6.html">Day-6: 異步處理 & 正則表示法</a>
       </li>
     </ul>
   </div>
