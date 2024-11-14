@@ -158,30 +158,47 @@ const mockFetch = (data, delay = 1000) => {
   });
 };
 
-// 實際業務場景
-console.log('=== 使用者開啟頁面 ==='); // 同步
+// // 實際業務場景
+// console.log('=== 使用者開啟頁面 ==='); // 同步
 
-const loadUserDashboard = async () => {
-  console.log('開始載入 Dashboard'); // 同步
-  // 第一次 Event Loop：取得用戶資料
-  const userData = await mockFetch(mockData.user, 1000);
-  console.log('用戶資料載入完成', userData); // 第一個 await 後的Microtask
-  // 第二次 Event Loop：同時取得訂單和通知
-  const [orders, notifications] = await Promise.all([
-    mockFetch(mockData.orders, 500),
-    mockFetch(mockData.notifications, 800),
-  ]);
-  console.log('訂單和通知載入完成'); // 第二個 await 後的Microtask
-  return { userData, orders, notifications };
-};
+// const loadUserDashboard = async () => {
+//   console.log('開始載入 Dashboard'); // 同步
+//   // 第一次 Event Loop：取得用戶資料
+//   const userData = await mockFetch(mockData.user, 1000);
+//   console.log('用戶資料載入完成', userData); // 第一個 await 後的Microtask
+//   // 第二次 Event Loop：同時取得訂單和通知
+//   const [orders, notifications] = await Promise.all([
+//     mockFetch(mockData.orders, 500),
+//     mockFetch(mockData.notifications, 800),
+//   ]);
+//   console.log('訂單和通知載入完成'); // 第二個 await 後的Microtask
+//   return { userData, orders, notifications };
+// };
 
-// 模擬用戶操作
-setTimeout(() => {
-  console.log('用戶點擊按鈕'); // Macrotask
-}, 0);
+// // 模擬用戶操作
+// setTimeout(() => {
+//   console.log('用戶點擊按鈕'); // Macrotask
+// }, 0);
 
-loadUserDashboard().then((data) => {
-  console.log('Dashboard 載入完成', data); // 最終的Microtask
-});
+// loadUserDashboard().then((data) => {
+//   console.log('Dashboard 載入完成', data); // 最終的Microtask
+// });
 
-console.log('=== 頁面初始化完成 ==='); // 同步
+// console.log('=== 頁面初始化完成 ==='); // 同步
+
+
+/** Regex */
+
+// 負向先行斷言 Negative Lookahead 用法: 
+
+const negativeLookaheadStr = 'dashtotrueth100 dasdsa111';
+const negativeLookaheadRegex = /^(?!.*123$)[A-Za-z\d]{6,}$/g;
+console.log(negativeLookaheadRegex.test(negativeLookaheadStr)); // true
+
+console.log(negativeLookaheadStr.match(negativeLookaheadRegex));
+
+// 找出重複字詞
+
+const duplicateStr = 'CHU!! PIKA PIKA PIKA CHU!! PIKA PIKA';
+const duplicateRegex = /\b(\w+)(?:\s\1)+\b/g;
+console.log(duplicateStr.match(duplicateRegex));
