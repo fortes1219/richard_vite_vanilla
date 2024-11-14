@@ -1,0 +1,1 @@
+import"./main.BTRTY6jQ.js";const o="dashtotrueth100 dasdsa111",t=/^(?!.*123$)[A-Za-z\d]{6,}$/g;console.log(t.test(o));console.log(o.match(t));const e="CHU!! PIKA PIKA PIKA CHU!! PIKA PIKA",a=/\b(\w+)(?:\s\1)+\b/g;console.log(e.match(a));

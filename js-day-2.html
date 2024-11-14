@@ -6,114 +6,15 @@
   <link rel="icon" type="image/svg+xml" href="./vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JS-DAY-2</title>
-  <script type="module" crossorigin src="./js/jsday2.ByeCGvIh.js"></script>
-  <link rel="modulepreload" crossorigin href="./js/main.DtBq9meY.js">
-  <link rel="modulepreload" crossorigin href="./js/lodash.TVC-EY0t.js">
-  <link rel="stylesheet" crossorigin href="./css/style-DXBng1Up.css">
+  <script type="module" crossorigin src="./js/jsDay2.B840KEuU.js"></script>
+  <link rel="modulepreload" crossorigin href="./js/main.BTRTY6jQ.js">
+  <link rel="stylesheet" crossorigin href="./css/style-VLRk7jQ3.css">
 </head>
 
 <body>
   <div id="app">
-    <div id="ass1" class="assignment">
-      <div class="topic">
-        <h1>物件遍歷處理</h1>
-        <b>Context:</b>
-        <ul>
-          <li>這是個模仿遊戲結束計算總分畫面的練習，有以下欄位：</li>
-          <li><b>Score:</b> 關卡得分</li>
-          <li><b>Special: </b>特別得分</li>
-          <li><b>Objective: </b>關卡小任務達成數量</li>
-          <li><b>compelete: </b>關卡完成獎勵</li>
-        </ul>
-
-        <b>Force:</b>
-        <ul>
-          <li>每個項目得分都由表單選擇的Objective倍率計算，也就是每個欄位都會被乘以Objective獎勵倍率2或4</li>
-          <li>遍歷物件時，避免Objective自己也被加算</li>
-        </ul>
-      </div>
-      <div id="work">
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>Score:</label>
-          <input id="scoreVal" type="text" placeholder="Score">
-        </div>
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>Special:</label>
-          <input id="specialVal" type="text" placeholder="Special">
-        </div>
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>objective:</label>
-          <div>
-            <input id="rate_2x" type="radio" name="objective">
-            <label for="rate_2x">x2</label>
-            <input id="rate_4x" type="radio" name="objective">
-            <label for="rate_4x">x4</label>
-          </div>
-        </div>
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>Compelete:</label>
-          <input id="compeleteVal" type="text" placeholder="Compelete">
-        </div>
-        <div class="row horizontal end">
-          <button id="submitBtn" class="submit">Confirm</button>
-        </div>
-      </div>
-      <p class="result-header">Result:</p>
-      <div id="result1" class="result">
-
-      </div>
-    </div>
-
-
-
-    <div id="ass2" class="assignment">
-      <div class="topic">
-        <h1>更新使用者資料</h1>
-        <b>Context:</b>
-        <ul>
-          <li><b>firstName:</b> 使用者的名</li>
-          <li><b>lastName:</b> 使用者的姓</li>
-          <li><b>address:</b> 使用者的地址（街道與城市）</li>
-          <li><b>email:</b> 電子郵件</li>
-        </ul>
-
-        <b>Force:</b>
-        <ul>
-          <li>不允許用空值覆蓋現有資料</li>
-          <li>嵌套的物件（如地址）需要深拷貝來避免資料污染</li>
-        </ul>
-      </div>
-      <div id="work" class="row inset">
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>First Name:</label>
-          <input id="firstNameVal" type="text" placeholder="First Name">
-        </div>
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>Last Name:</label>
-          <input id="lastNameVal" type="text" placeholder="Last Name">
-        </div>
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>Email:</label>
-          <input id="emailVal" type="text" placeholder="Email">
-        </div>
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>Street:</label>
-          <input id="streetVal" type="text" placeholder="Street">
-        </div>
-        <div class="row horizontal space" data-space="space-bottom">
-          <label>City:</label>
-          <input id="cityVal" type="text" placeholder="City">
-        </div>
-        <div class="row horizontal end">
-          <button id="submitBtn2" class="submit">Update User</button>
-        </div>
-      </div>
-      <p class="result-header">Updated User Data:</p>
-      <div id="result2" class="result"></div>
-    </div>
+    <h2>Click Event</h2>
+    <button id="submit">Submit</button>
   </div>
-
-</body>
-
-
+</body>
 </html>
