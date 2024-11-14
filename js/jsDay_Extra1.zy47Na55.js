@@ -1,0 +1,1 @@
+import"./main.DtBq9meY.js";const n=e=>e.replace(/^https?:\/\//,"").replace(/\/.*$/,"").replace(/:[0-9]+$/,"").replace(/^.*?([^.]+\.[^.]+\.[^.]+$|[^.]+\.[^.]+$)/,"$1"),c=()=>{const e=document.getElementById("url_1").value,t=document.getElementById("result");t.innerHTML=n(e)},r=document.getElementById("action");r.addEventListener("click",c);

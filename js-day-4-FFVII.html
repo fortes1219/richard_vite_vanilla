@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仿製一個FFVII的戰鬥系統</title>
+  <script type="module" crossorigin src="./js/jsday4_FFVII.DqDIM6b2.js"></script>
+  <link rel="modulepreload" crossorigin href="./js/main.DtBq9meY.js">
+  <link rel="modulepreload" crossorigin href="./js/lodash.TVC-EY0t.js">
+  <link rel="stylesheet" crossorigin href="./css/style-DXBng1Up.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="ass4">
+      <div class="block">
+        <h1>仿製一個FFVII的戰鬥系統</h1>
+        <p>有三位勇者，分別代表不同職業，各自有不同的特技或魔法</p>
+
+        <b>Context:</b>
+        <ul>
+          <li>出現了一隻巨龍外觀的召喚獸，你必須打倒牠</li>
+          <li>BOSS的HP每減少2000會發動一次全體攻擊，平常不會動</li>
+        </ul>
+
+        <b>Force:</b>
+        <ul>
+          <li>攻擊或者被擊都必須顯示正確數字</li>
+          <li>使用魔法或特技會扣除MP，MP最少為0</li>
+          <li>當Aerith的恢復魔法使我方成員HP補滿到最大值時，不可增加體力上限</li>
+          <li>遭受攻擊會扣除HP，HP最少為0，HP耗盡後角色卡顯示「無法戰鬥」</li>
+          <li>如果玩家全數被打倒後，顯示戰鬥失敗以及重新再玩的Button</li>
+          <li>當BOSS遭受下一次攻擊HP歸零時，該次不會發動攻擊</li>
+          <li>BOSS被打倒(HP為0)後，顯示戰鬥勝利以及重新再玩的Button</li>
+          <li>BOSS的攻擊模組請自己寫，老師這次不幫你們做太多事情</li>
+          <li>按下重新再玩的Button則重新開局，雙方恢復原始的狀態</li>
+        </ul>
+        <p>----------作答區----------</p>
+        <br>
+      </div>
+      <div class="field">
+        <div id="players"></div>
+        <div id="result"></div>
+        <div id="mob"></div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+
+</html>
