@@ -69,6 +69,9 @@ appContent.insertAdjacentHTML('afterbegin',`
       <li>
         <a href="js-day-6.html">Day-6: 異步處理 & 正則表示法</a>
       </li>
+      <li>
+        <a href="js-day-7.html">Day-7: Storage & Cookies</a>
+      </li>
     </ul>
   </div>
 `);
